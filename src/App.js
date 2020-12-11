@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Question1 from "./questions/Question1";
 import Question2 from "./questions/Question2";
@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <div style={{margin: 20}}>
-        {questions.map((question, index) => <button onClick={() => setCurrentQuestionIndex(index)}>{question}</button>)}
+        {questions.map((question, index) => <button key={index} onClick={() => setCurrentQuestionIndex(index)}>{question}</button>)}
       </div>
       <div style={{justifyContent: 'center', alignItems: 'center'}}>
         {renderQuestion()}
